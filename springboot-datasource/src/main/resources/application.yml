@@ -1,0 +1,31 @@
+#端口
+server:
+  port: 8080
+#spring:
+#  数据源
+#  datasource:
+#    url: jdbc.url=jdbc:mysql://localhost:3306/datasource?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone = GMT
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    username: root
+#    data-password: 888888
+#    type: org.springframework.jdbc.datasource.DriverManagerDataSource
+spring:
+  druid:
+    url: jdbc.url=jdbc:mysql://localhost:3306/datasource?useUnicode=true&characterEncoding=utf8mp4&useSSL=true&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 888888
+    max-active: 20
+    initial-size: 5
+    min-idle: 5
+    max-idle: 10
+    validation-query: select 1
+    stat-view:
+      login-username: admin
+      login-password: admin
+      allow:
+      deny:
+      url-mapping:
+        - "/druid/*"
+
+

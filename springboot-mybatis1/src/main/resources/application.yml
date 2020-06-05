@@ -1,0 +1,32 @@
+server:
+  port: 8080
+#数据源配置
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/lims?useUnicode=true&characterEncoding=utf8&useSSL=true&serverTimezone=GMT
+      username: root
+      password: 888888
+      max-active: 10
+      min-idle: 5
+      max-wait: 5000
+      initial-size: 5
+      validation-query: select 1
+      stat-view-servlet:
+        enabled: true
+        login-username: admin
+        login-password: admin
+        allow:
+        deny:
+        url-pattern: "/druid/*"
+#mybatis的配置
+#日志
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+  mapper-locations:
+    - classpath:mapper/*Mapper.xml
+#  type-aliases-package: com.example.springboot.domain
+
